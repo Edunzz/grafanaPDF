@@ -7,7 +7,7 @@
       </title>
       <link type="text/css" href="/static/assets/css/volt.css" rel="stylesheet">
    </head>
-   <body style="background-color: white;padding: 100px">
+   <body style="background-color: white;padding: 100px 0">
       <header class="text-center">
          <h4 class="h4">
             {{ report_name }}
@@ -21,9 +21,9 @@
          {% for row in data_render %}
          <section class="section">
             <div class="row justify-content-center mb-5">
-               <h4 class="h4">
+               <p>
                   {{ row['row-name'] }}
-               </h2>
+               <p>
             </div>
             <div class="text-center">
                {% for panel in row['img_panels'] %}
