@@ -4,6 +4,10 @@ import requests
 import urllib3
 
 grafana_services="localhost:3000"
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+headers = {'Content-Type': 'application/json',
+           "Authorization": "Bearer eyJrIjoiRUNxWE8zeDhkNDhYNnRWdWNnSms4ZTFGYXZwcG9mU2oiLCJuIjoicmVwb3J0ZXIiLCJpZCI6MX0="
+           }
 
 app = Flask(__name__)
 
