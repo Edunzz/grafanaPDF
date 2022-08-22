@@ -65,6 +65,7 @@ def reporte(uid):
                            report_name=data_grafana["meta"]["slug"],
                            from_date=dashboard_vars["from"],
                            to_date=dashboard_vars["to"],
+                           hosts=dashboard_vars["var-host"],
                            data_render=data_render))
 
 if __name__ == '__main__':
