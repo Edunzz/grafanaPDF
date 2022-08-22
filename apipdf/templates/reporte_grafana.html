@@ -7,15 +7,15 @@
       </title>
       <link type="text/css" href="/static/assets/css/volt.css" rel="stylesheet">
    </head>
-   <body style="background-color: white;">
+   <body style="background-color: white;padding: 100px">
       <header class="text-center">
-         <h2 class="h2">
-            {{ report_name }}
-         </h2>
          <h4 class="h4">
+            {{ report_name }}
+         </h4>
+         <p>
             From: {{ from_date }} - To: {{ to_date }}
             {{ host }}
-         </h4>
+         </p>
       </header>
       <main>
          {% for row in data_render %}
@@ -28,7 +28,7 @@
             <div class="text-center">
                {% for panel in row['img_panels'] %}
                <span>
-                  {% if panel['url'] != 'System Report : $host' %}
+                  {% if panel['title'] != 'System Report : $host' %}
                   <img src="{{ panel['url'] }}">
                   {% endif %}
                </span>
@@ -37,7 +37,7 @@
          </section>
          {% endfor %}
       </main>
-      <footer class="footer py-6 bg-gray-800 text-white">
+      <footer class="footer py-6">
          <div class="container">
             <div class="row">
                <div class="col mb-md-0">
