@@ -59,7 +59,8 @@ def reporte(uid):
         "row-name" : row["row-name"],
         "img_panels" : [{
             "title" : panel["title"],
-            "url" : "http://"+grafana_services_public+"/render/d-solo/"+uid+"/_?"+"height="+str(round(panel["h"]*(1000/24)))+"&width="+str(round(panel["w"]*(1280/24)))+"&panelId="+str(panel["id"])+"&theme=light"+"&var-host="+panel["var-host"]+vars_url
+            "url" : "http://"+grafana_services_public+"/render/d-solo/"+uid+"/_?"+"height="+str(round(panel["h"]*(1000/24)))+"&width="+str(round(panel["w"]*(1280/24)))+"&panelId="+str(panel["id"])+"&theme=light"+"&var-host="+panel["var-host"]+vars_url,
+            "w" : str(panel["w"]*100/24)
         }
         for panel in row["panels"]
         ]
