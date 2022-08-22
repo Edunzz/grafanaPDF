@@ -9,14 +9,12 @@
    </head>
    <body>
       <header class="header-global">
-         <h1 class="h1 px-lg-5">
+         <h2 class="h2">
             {{ report_name }}
-         </h1>
-         <h2 class="h2 px-lg-5">
-            {{ from_date }} - {{ to_date }}
          </h2>
-         <h4 class="h4 px-lg-5">
-            {{ host|join(', ')}}
+         <h4 class="h4">
+            From: {{ from_date }} - To: {{ to_date }}
+            {{ host }}
          </h4>
       </header>
       <main>
@@ -30,15 +28,11 @@
                      </h2>
                   </div>
                </div>
-               {% for panel in row['img_panels'] %}
                <div class="row">
-                  <div class="col-12 col-sm-6 col-lg-3">
-                     <div class="card bg-white shadow-soft text-primary rounded mb-4">
-                        {{ panel['url'] }}
-                     </div>
-                  </div>
+                  {% for panel in row['img_panels'] %}
+                  <img src="{{ panel['url'] }}">
+                  {% endfor %}
                </div>
-               {% endfor %}
             </div>
          </section>
          {% endfor %}
