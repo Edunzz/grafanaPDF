@@ -9,4 +9,5 @@ services:
         environment: 
             PORT: 8686
             FLASK_DEBUG: 1
+            grafana_domain: '34.133.152.106:3000'
         network_mode: host
