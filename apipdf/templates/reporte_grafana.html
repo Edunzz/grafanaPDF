@@ -21,11 +21,9 @@
          {% for row in data_render %}
          <section class="section">
             <div class="row justify-content-center mb-5">
-               <div class="col-12 text-center">
-                  <h4 class="h4">
-                     {{ row['row-name'] }}
-                  </h2>
-               </div>
+               <h4 class="h4">
+                  {{ row['row-name'] }}
+               </h2>
             </div>
             <div class="row text-center">
                {% for panel in row['img_panels'] %}
