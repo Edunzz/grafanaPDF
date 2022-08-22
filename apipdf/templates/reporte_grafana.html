@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <title>
+         Reporte AQUIVAELHOST  
+      </title>
+      <link type="text/css" href="/static/assets/css/volt.css" rel="stylesheet">
+   </head>
+   <body>
+      <header class="header-global">
+         <h2 class="h1 px-lg-5">Programas Educativos Junior Achievement Perú</h2>
+      </header>
+      <main>
+         <section class="section section-lg bg-gray-800 text-white">
+            <div class="container">
+               <div class="row justify-content-center mb-5 mb-lg-6">
+                  <div class="col-12 text-center">
+                     <h2 class="h1 px-lg-5">Programas Educativos Junior Achievement Perú</h2>
+                  </div>
+               </div>
+               <div class="row">
+                  {% for data_p in programas %}
+                  <div class="col-12 col-sm-6 col-lg-3">
+                     <div class="card bg-white shadow-soft text-primary rounded mb-4">
+                        <h5 class="fw-bold text-primary">{{ data_p['nombre'] }}</h5>
+                     </div>
+                  </div>
+                  {% endfor %}
+               </div>
+            </div>
+         </section>
+      </main>
+      <footer class="footer py-6 bg-gray-800 text-white">
+         <div class="container">
+            <div class="row">
+               <div class="col mb-md-0">
+                  <div class="d-flex text-center justify-content-center align-items-center" role="contentinfo">
+                     <p class="fw-normal font-small mb-0">
+                        &copy; Kyndryl-<span class="current-year">2022</span> - desarrollado por Jose Eduardo Romero Jimenez.
+                     </p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </footer>
+   </body>
+</html>
