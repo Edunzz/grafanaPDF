@@ -29,7 +29,7 @@
                {% for panel in row['img_panels'] %}
                <span>
                   {% if panel['title'] != 'System Report : $host' %}
-                  <img src="{{ panel['url'] }}">
+                  <img src="{{ panel['url'] }}" style="width: {{ panel['w'] }}%;">
                   {% endif %}
                </span>
                {% endfor %}
