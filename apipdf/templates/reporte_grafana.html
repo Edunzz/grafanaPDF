@@ -25,10 +25,12 @@
                   {{ row['row-name'] }}
                </h2>
             </div>
-            <div class="row text-center">
+            <div class="text-center">
                {% for panel in row['img_panels'] %}
                <span>
+                  {% if panel['url'] != 'System Report : $host' %}
                   <img src="{{ panel['url'] }}">
+                  {% endif %}
                </span>
                {% endfor %}
             </div>
