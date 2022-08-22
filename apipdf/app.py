@@ -4,6 +4,7 @@ import requests
 import urllib3
 
 grafana_services="localhost:3000"
+grafana_services_public=os.getenv('grafana_domain')
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 headers = {'Content-Type': 'application/json',
            "Authorization": "Bearer eyJrIjoiRUNxWE8zeDhkNDhYNnRWdWNnSms4ZTFGYXZwcG9mU2oiLCJuIjoicmVwb3J0ZXIiLCJpZCI6MX0="
@@ -58,7 +59,7 @@ def reporte(uid):
         "row-name" : row["row-name"],
         "img_panels" : [{
             "title" : panel["title"],
-            "url" : "http://"+grafana_services+"/render/d-solo/"+uid+"/_?"+"height="+str(round(panel["h"]*(1000/24)))+"&width="+str(round(panel["w"]*(1280/24)))+"&panelId="+str(panel["id"])+"&theme=light"+"&var-host="+panel["var-host"]+vars_url
+            "url" : "http://"+grafana_services_public+"/render/d-solo/"+uid+"/_?"+"height="+str(round(panel["h"]*(1000/24)))+"&width="+str(round(panel["w"]*(1280/24)))+"&panelId="+str(panel["id"])+"&theme=light"+"&var-host="+panel["var-host"]+vars_url
         }
         for panel in row["panels"]
         ]
