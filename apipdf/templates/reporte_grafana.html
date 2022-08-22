@@ -8,7 +8,7 @@
       <link type="text/css" href="/static/assets/css/volt.css" rel="stylesheet">
    </head>
    <body>
-      <header class="header-global">
+      <header class="text-center">
          <h2 class="h2">
             {{ report_name }}
          </h2>
@@ -19,20 +19,20 @@
       </header>
       <main>
          {% for row in data_render %}
-         <section class="section section-lg bg-gray-800 text-white">
-            <div class="container">
-               <div class="row justify-content-center mb-5 mb-lg-6">
-                  <div class="col-12 text-center">
-                     <h2 class="h1 px-lg-5">
-                        {{ row['row-name'] }}
-                     </h2>
-                  </div>
+         <section class="section">
+            <div class="row justify-content-center mb-5">
+               <div class="col-12 text-center">
+                  <h2 class="h2">
+                     {{ row['row-name'] }}
+                  </h2>
                </div>
-               <div class="row">
-                  {% for panel in row['img_panels'] %}
+            </div>
+            <div class="row">
+               {% for panel in row['img_panels'] %}
+               <span>
                   <img src="{{ panel['url'] }}">
-                  {% endfor %}
-               </div>
+               </span>
+               {% endfor %}
             </div>
          </section>
          {% endfor %}
