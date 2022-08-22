@@ -38,7 +38,7 @@ def reporte(uid):
       dashboard_vars["var-host"]=[dashboard_vars["var-host"]]
 
     dashboard_rows=[{
-        "row-name":"system report "+vars_item,
+        "row-name":"System report : "+vars_item,
         "panels":[{
             "var-host":vars_item,
             "title":panel["title"],
@@ -67,7 +67,7 @@ def reporte(uid):
     for row in dashboard_rows
     ]
     return(render_template("reporte_grafana.html",
-                           report_name=data_grafana["meta"]["slug"],
+                           report_name=data_grafana["meta"]["slug"].capitalize(),
                            from_date=dashboard_vars["from"],
                            to_date=dashboard_vars["to"],
                            hosts=dashboard_vars["var-host"],
